@@ -210,13 +210,13 @@ def preprocessing(data_type, files):
     print('argument:', argument_count)
 
     verify_result(result)
-    with open('output/{}.json'.format(data_type), 'w') as f:
+    with open('output/English/{}.json'.format(data_type), 'w') as f:
         json.dump(result, f, indent=2)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--data', help="Path of ACE2005 English data", default='./data/ace_2005_td_v7/data/English')
+    parser.add_argument('--data', help="Path of ACE2005 English data", default='./data/English')
     parser.add_argument('--nlp', help="Standford Core Nlp path", default='./stanford-corenlp-full-2018-10-05')
     args = parser.parse_args()
     test_files, dev_files, train_files = get_data_paths(args.data)
